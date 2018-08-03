@@ -3,32 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html>
+<?php
 
-<head>
+$data['title'] = "My Real Title";
+$data['heading'] = "My Real Heading";
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>INSPINIA | Dashboard v.4</title>
-
-    <link href="<?php echo base_url()."assets/";?>css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url()."assets/";?>font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <!-- Morris -->
-    <link href="<?php echo base_url()."assets/"; ?>css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
-
-    <link href="<?php echo base_url()."assets/"; ?>css/animate.css" rel="stylesheet">
-    <link href="<?php echo base_url()."assets/"; ?>css/style.css" rel="stylesheet">
-
-</head>
+$this->load->view('layout/header',$data); ?>
 <body class="gray-bg">
-
 <div class="middle-box text-center loginscreen animated fadeInDown">
     <div>
         <div>
-
             <h1 class="logo-name">IN+</h1>
-
         </div>
         <h3>Welcome to IN+</h3>
         <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.

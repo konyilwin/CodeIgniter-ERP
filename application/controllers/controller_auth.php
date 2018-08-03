@@ -9,6 +9,7 @@ class controller_auth extends CI_Controller {
 //      $this->load->library('email');
     }
 
+
     public function index()
     {
         $this->load->view('auth/login');
