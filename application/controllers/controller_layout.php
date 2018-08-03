@@ -5,10 +5,7 @@ class controller_layout extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-    }
-
-    public function __index(){
-        $this->load->view('url',$this->loadCss());
+        $this->load->view('layout/header');
     }
 
     public function loadCss(){

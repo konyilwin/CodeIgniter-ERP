@@ -9,6 +9,11 @@ class controller_auth extends CI_Controller {
 //      $this->load->library('email');
     }
 
+    public function loadHead(){
+        $data['title'] = "My Real Title";
+        $data['heading'] = "My Real Heading";
+        $this->load->view('layout/header',$data);
+    }
 
     public function index()
     {

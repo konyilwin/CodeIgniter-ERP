@@ -1,14 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$CI = controller_auth::get_instance();
 ?>
 <!DOCTYPE html>
 <html>
-<?php
+<?php $CI->loadHead(); ?>
 
-$data['title'] = "My Real Title";
-$data['heading'] = "My Real Heading";
-
-$this->load->view('layout/header',$data); ?>
 <body class="gray-bg">
 <div class="middle-box text-center loginscreen animated fadeInDown">
     <div>
