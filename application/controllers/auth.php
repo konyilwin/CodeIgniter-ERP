@@ -7,7 +7,6 @@ class auth extends MY_Controller {
         parent::__construct();
         $this->load->model('model_auth');
     }
-
     public function login(){
         $this->render('auth/login','empty');
     }
@@ -15,21 +14,20 @@ class auth extends MY_Controller {
     public  function forgotPassword(){
         $this->render('auth/forgot_password','empty');
     }
-    public function validateLogin()
-    {
-        $usuario = $this->input->post('username');
-        $password = $this->input->post('password');
 
+    public function validateLogin(){
+        $data = $this->input->post();
+        $query2 = $this->model_auth->validar($data['username'],$data['password']);
+        if($query2){
+            $this->session->set_userdata('user',$query2[0]->nombre);
+            echo json_encode($query2);
+        }else{
+            echo json_encode(false);
+        }
+    }
 
-        $query2 = $this->model_auth->validar($usuario,$password);
-        echo json_encode($query2);
-        /*
-                if ($this->session->userdata('codigo_usuario')) {
-                    redirect(base_url('dashboard/inicio'));
-
-                }else{
-
-                }
-        */
+    public function loginOut(){
+        $this->session->sess_destroy();
+        redirect(base_url());
     }
 }

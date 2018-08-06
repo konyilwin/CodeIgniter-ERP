@@ -1,6 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <script>
-    var auth = new Auth();
+    $(document).ready(function () {
+        var auth = new Auth();
+        $('body').keyup((e) => {
+            if (e.keyCode === 13) {
+                ($('#username').val() && $('#password').val()) ? auth.login() : alert('Completed all fields!');
+            }
+        });
+    });
 </script>
 <body class="gray-bg">
 <div class="loginColumns animated fadeInDown">
@@ -47,7 +54,7 @@
                     </div>
                     <form action="" id="fromLogin">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="username" placeholder="Username" name="usuario"/>
+                            <input type="email" class="form-control" id="username" placeholder="Username" name="username"/>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" placeholder="Password" name="password"/>
@@ -83,4 +90,3 @@
     </div>
 </div>
 </body>
-
