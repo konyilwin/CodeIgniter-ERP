@@ -9,7 +9,7 @@
 
     <link href="<?php echo base_url()."assets/"; ?>css/animate.css" rel="stylesheet">
     <link href="<?php echo base_url()."assets/"; ?>css/style.css" rel="stylesheet">
-
+    <!-- User Script -->
     <script src="<?php echo base_url()."assets/"; ?>js/helpers.js"></script>
     <script src="<?php echo base_url()."assets/"; ?>js/main.js"></script>
 </head>

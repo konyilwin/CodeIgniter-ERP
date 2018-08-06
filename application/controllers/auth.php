@@ -8,13 +8,28 @@ class auth extends MY_Controller {
         $this->load->model('model_auth');
     }
 
-
-    public function index()
-    {
+    public function login(){
         $this->render('auth/login','empty');
-        $query2 = $this->model_auth->validar('jasp402@gmail.com','123123');
-        echo json_encode($query2);
     }
 
+    public  function forgotPassword(){
+        $this->render('auth/forgot_password','empty');
+    }
+    public function validateLogin()
+    {
+        $usuario = $this->input->post('username');
+        $password = $this->input->post('password');
 
+
+        $query2 = $this->model_auth->validar($usuario,$password);
+        echo json_encode($query2);
+        /*
+                if ($this->session->userdata('codigo_usuario')) {
+                    redirect(base_url('dashboard/inicio'));
+
+                }else{
+
+                }
+        */
+    }
 }

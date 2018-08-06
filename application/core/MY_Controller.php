@@ -8,7 +8,7 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $this->data['pagetitle'] = 'My CodeIgniter App';
     }
-
+//ToDo - $options falta pasar parametros para que cambie ciertos aspectos del template
     protected function render($the_view = NULL, $template = 'master', $options = array())
     {
         if($template == 'json' || $this->input->is_ajax_request())

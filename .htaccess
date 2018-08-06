@@ -1,0 +1,10 @@
+RewriteEngine on
+
+#Any HTTP request other than those for index.php, 
+#assets folder, files   folder and robots.txt
+#is treated as a request for your index.php file.
+
+RewriteCond $1 !^(index\.php|assets|images|files|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]

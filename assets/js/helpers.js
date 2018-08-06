@@ -1,3 +1,6 @@
+class help {
+
+}
 function disa_form(id){
     var id_form = id.toString();
     $("#"+id_form+" input").prop( "disabled", true );
