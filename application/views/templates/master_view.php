@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<html>
 <?php $this->load->view('templates/_parts/master_header_view'); ?>
 <body class="fixed-sidebar no-skin-config full-height-layout">
     <div id="wrapper">
+        <!-- 1 siderbar -->
         <?php $this->load->view('templates/_parts/master_sidebar_view'); ?>
         <div id="page-wrapper" class="gray-bg">
         <?php $this->load->view('templates/_parts/master_topbar_view'); ?>
@@ -12,9 +15,13 @@
 </body>
 
 <!-- Mainly scripts -->
-<script src="<?php echo base_url()."assets/";?>js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="<?php echo base_url()."assets/";?>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
+<script src="<?php echo base_url()."assets/"; ?>js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="<?php echo base_url()."assets/"; ?>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="<?php echo base_url()."assets/"; ?>js/inspinia.js"></script>
+<script src="<?php echo base_url()."assets/"; ?>js/plugins/pace/pace.min.js"></script>
 <!-- Flot -->
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.tooltip.min.js"></script>
@@ -23,11 +30,6 @@
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.pie.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.symbol.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.time.js"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="<?php echo base_url()."assets/";?>js/inspinia.js"></script>
-<script src="<?php echo base_url()."assets/";?>js/plugins/pace/pace.min.js"></script>
-
 <!-- Sparkline -->
 <script src="<?php echo base_url()."assets/";?>js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
@@ -118,3 +120,4 @@
 
     });
 </script>
+</html>

@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <script>
-    $(document).ready(function () {
-        var auth = new Auth();
+    let auth = new Auth();
+    $(document).ready(()=> {
         $('body').keyup((e) => {
             if (e.keyCode === 13) {
                 ($('#username').val() && $('#password').val()) ? auth.login() : alert('Completed all fields!');
@@ -62,7 +62,7 @@
                         <button type="button" class="btn btn-primary block full-width m-b"  onclick="auth.login();">
                             Login
                         </button>
-                        <div id="alert"></div>
+                        <div class="col-md-12" id="alert"></div>
                         <a href="<?=base_url('auth/forgotPassword') ?>">
                             <small">Forgot password?</small>
                         </a>
@@ -71,9 +71,8 @@
                         </p>
                         <a class="btn btn-sm btn-white btn-block" href="<?=base_url('shopping/packages') ?>">Create an account</a>
                     </form>
-
                     <p class="m-t">
-                        <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
+                        <small>Inspinia we app framework base on Bootstrap 4 &copy; 2018</small>
                     </p>
                 </div>
             </div>

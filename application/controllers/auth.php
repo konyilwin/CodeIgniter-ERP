@@ -8,7 +8,12 @@ class auth extends MY_Controller {
         $this->load->model('model_auth');
     }
     public function login(){
-        $this->render('auth/login','empty');
+        if ($this->session->userdata('user')) {
+            redirect(base_url('dashboard/'));
+        }else{
+            $this->render('auth/login','empty');
+        }
+
     }
 
     public  function forgotPassword(){

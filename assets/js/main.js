@@ -1,37 +1,35 @@
-class Auth extends help {
+class Auth extends Help {
     login() {
-        $.ajax({
-            url: 'validateLogin',
-            type: 'POST',
-            dataType: 'json',
-            data: $('#fromLogin').serialize(),
-            beforeSend: function(xhr, textStatus) {
-                $('#ibox').children('.ibox-content').toggleClass('sk-loading');
-            },
-            success: function(data) {
-                console.log(data);
-                if(!data){
+        let objNotify = {
+            msg : "Invalide login or Password <a class=\"alert-link\" href='"+window.location.href+"'>Verify and try again</a>.",
+            type: 'danger'
+            };
+            $.ajax({
+                url: 'validateLogin',
+                type: 'POST',
+                dataType: 'json',
+                data: $('#fromLogin').serialize(),
+                beforeSend: (xhr, textStatus) => {
                     $('#ibox').children('.ibox-content').toggleClass('sk-loading');
-                    console.log(data);
-                    let alert = ' <div class="alert alert-danger hidden">\n' +
-                        'Invalide login or Password <a class="alert-link" href="#">Verify and try again</a>.\n' +
-                        '</div>';
-                    $('#alert').append(alert);
-                }else{
-                    console.log(data);
-                    window.location.replace('../dashboard');
+                },
+                success: (data) => {
+                    if (!data) {
+                        console.log(data);
+                        $('#ibox').children('.ibox-content').toggleClass('sk-loading');
+                        super.userNotify(objNotify.msg, objNotify.type)
+                    } else {
+                        console.log(data);
+                        window.location.replace('../dashboard');
+                    }
                 }
-            }
-        });
-
-
-
+            });
+        }
     }
-}
 
 
 
 
+//this.userNotify('Invalide login or Password Verify and try again');
 // $('#alert_login_danger').css('display', 'none');
 // $('#alert_login_warning').css('display', 'none');
 // $('#alert_login_success').css('display', 'block');

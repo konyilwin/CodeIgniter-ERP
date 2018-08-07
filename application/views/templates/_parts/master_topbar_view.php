@@ -1,3 +1,4 @@
+<!-- #2 /topbar -->
 <div class="row border-bottom">
     <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
@@ -20,7 +21,7 @@
                     <li>
                         <div class="dropdown-messages-box">
                             <a class="dropdown-item float-left" href="profile.html">
-                                <img alt="image" class="rounded-circle" src="img/a7.jpg">
+                                <img alt="image" class="rounded-circle" src="<?php echo base_url()."assets/";?>img/a7.jpg">
                             </a>
                             <div class="media-body">
                                 <small class="float-right">46h ago</small>
@@ -33,7 +34,7 @@
                     <li>
                         <div class="dropdown-messages-box">
                             <a class="dropdown-item float-left" href="profile.html">
-                                <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                <img alt="image" class="rounded-circle" src="<?php echo base_url()."assets/";?>img/a4.jpg">
                             </a>
                             <div class="media-body ">
                                 <small class="float-right text-navy">5h ago</small>
@@ -46,7 +47,7 @@
                     <li>
                         <div class="dropdown-messages-box">
                             <a class="dropdown-item float-left" href="profile.html">
-                                <img alt="image" class="rounded-circle" src="img/profile.jpg">
+                                <img alt="image" class="rounded-circle" src="<?php echo base_url()."assets/";?>img/profile.jpg">
                             </a>
                             <div class="media-body ">
                                 <small class="float-right">23h ago</small>
@@ -110,7 +111,7 @@
 
 
             <li>
-                <a href="login.html">
+                <a href="<?php echo base_url();?>auth/loginout">
                     <i class="fa fa-sign-out"></i> Log out
                 </a>
             </li>
