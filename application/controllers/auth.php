@@ -2,15 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class auth extends MY_Controller {
+
     public function __construct()
     {
         parent::__construct();
         $this->load->model('model_auth');
+
     }
     public function login(){
         if ($this->session->userdata('user')) {
             redirect(base_url('dashboard/'));
         }else{
+            //echo "test CRUD:".$this->model_auth->testCrud();
             $this->render('auth/login','empty');
         }
 

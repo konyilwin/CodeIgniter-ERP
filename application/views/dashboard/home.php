@@ -1,4 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<script>
+    let dashboard = new Dashboard();
+    dashboard.test();
+</script>
 <div class="fh-breadcrumb">
     <div class="full-height">
         <div class="full-height-scroll white-bg border-left">

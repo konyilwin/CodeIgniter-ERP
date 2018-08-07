@@ -8,7 +8,7 @@ class Shopping extends MY_Controller {
         $this->load->model('model_shopping');
     }
 
-    public function packages(){
-        $this->render('shopping/packages','empty');
+    public function blog(){
+        $this->render('shopping/blog','empty');
     }
 }

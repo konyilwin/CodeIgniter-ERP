@@ -25,15 +25,5 @@ class Auth extends Help {
             });
         }
     }
-
-
-
-
-//this.userNotify('Invalide login or Password Verify and try again');
-// $('#alert_login_danger').css('display', 'none');
-// $('#alert_login_warning').css('display', 'none');
-// $('#alert_login_success').css('display', 'block');
-// $('#alert_login_danger').css('display', 'none');
-// $('#alert_login_acceso').css('display', 'block');
-// $('#alert_login_danger').css('display', 'block');
-// $('#alert_login_warning').css('display', 'block');
+class Dashboard extends Help {
+}

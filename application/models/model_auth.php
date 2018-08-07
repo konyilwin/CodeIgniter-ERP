@@ -9,11 +9,7 @@ class model_auth extends CI_Model {
     }
 
     public function validar($usuario,$password){
-        // $this->db->query("CALL ActualizaEstadoProceso");
-        // $this->db->SELECT("usu.id_usuario, usu_co.estado AS estado_contrato");
-        // $this->db->from('user_usuario usu');
-        // $this->db->join('user_contusemp usu_cuemp', 'usu.id_usuario = usu_cuemp.id_usuario');
-        // $this->db->join('user_contrato usu_co', 'usu_co.id_contrato = usu_cuemp.id_contrato');
+
         $this->db->select('usu.*');
         $this->db->from('user_usuario usu');
         $this->db->where('usu.correo', $usuario);
@@ -25,6 +21,10 @@ class model_auth extends CI_Model {
         }else{
             return FALSE;
         }
+    }
+
+    public function testCrud(){
+        return $this->CRUD->read_data_table('user_usuario');
     }
 
 //    public function validarCondicion($correo){
