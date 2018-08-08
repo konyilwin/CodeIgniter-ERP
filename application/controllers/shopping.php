@@ -5,7 +5,6 @@ class Shopping extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('model_shopping');
     }
 
     public function blog(){

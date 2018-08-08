@@ -15,6 +15,7 @@
     <script src="<?php echo base_url()."assets/"; ?>js/popper.min.js"></script>
     <script src="<?php echo base_url()."assets/"; ?>js/bootstrap.js"></script>
     <!-- [JS] - User Script -->
+    <script src="<?php echo base_url()."assets/"; ?>js/constants.js"></script>
     <script src="<?php echo base_url()."assets/"; ?>js/helpers.js"></script>
     <script src="<?php echo base_url()."assets/"; ?>js/main.js"></script>
 </head>
