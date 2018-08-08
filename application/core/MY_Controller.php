@@ -8,6 +8,7 @@ class MY_Controller extends CI_Controller
     {
         parent::__construct();
         $this->data['pagetitle'] = 'My CodeIgniter App';
+        $this->data['data_user'] = $this->session->userdata('user');
     }
 //ToDo - $options falta pasar parametros para que cambie ciertos aspectos del template
     protected function render($the_view = NULL, $template = 'master', $options = array())

@@ -135,38 +135,12 @@ class CRUD extends CI_Model
 
     public function read_id($table, $whereId, $method = '')
     {
-
-        $items = array();
-        $result = array();
         $this->db->select('*');
         $this->db->from($table);
         $this->db->where(key($whereId), $whereId[key($whereId)]);
         $query = $this->db->get();
 
-        $items['num_err'] = $this->db->_error_number();
-        $items['mens_err'] = $this->db->_error_message();
-
-        foreach ($query->result() as $key => $value) {
-            $result[$key] = $value;
-        }
-
-        switch ($method) {
-            case 'ajax':
-                if ($items['num_err'] == 0) {
-                    $data = array('success' => true, 'result' => $result);
-                    echo json_encode($data);
-                } else {
-                    $data = array('success' => false);
-                    echo json_encode($data);
-                }
-                break;
-        }
-
-        if ($items['num_err'] == 0) {
-            return $result;
-        } else {
-            return FALSE;
-        }
+        return $query->result();
 
     }
 
@@ -243,38 +217,13 @@ class CRUD extends CI_Model
 
     public function read_field_table($field, $table, $where='',$method='')
     {
-
-        $items = array();
-        $result = array();
-
         $this->db->select($field);
         $this->db->from($table);
         if(is_array($where)){
             $this->db->where($where);
         }
         $query = $this->db->get();
-        $items['num_err'] = $this->db->_error_number();
-        $items['mens_err'] = $this->db->_error_message();
-        foreach ($query->result() as $key => $value) {
-            $result[$key] = $value;
-        }
-        switch ($method) {
-            case 'ajax':
-                if ($result) {
-                    $data = array('success' => true, 'result' => $result);
-                    echo json_encode($data);
-                } else {
-                    $data = array('success' => false);
-                    echo json_encode($data);
-                }
-                break;
-        }
-        if ($items['num_err'] == 0) {
-            return $result;
-        } else {
-            return FALSE;
-        }
-
+        return $query->result();
     }
 
     public function edit($table, $data, $whereId)

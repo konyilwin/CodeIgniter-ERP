@@ -1,10 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<script>
-    let dashboard = new Dashboard();
-</script>
 <div class="fh-breadcrumb">
     <div class="full-height">
-        <div class="full-height-scroll white-bg border-left">
+        <div class="full-height-scroll border-left gray-bg">
             <div class="p-w-md m-t-sm">
                 <div class="row">
 
@@ -111,7 +108,6 @@
                     </div>
 
                 </div>
-
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="small float-left col-md-3 m-l-lg m-t-md">
@@ -125,8 +121,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox">
@@ -317,10 +311,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
     </div>
 </div>

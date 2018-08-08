@@ -3,17 +3,17 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <img alt="image" class="rounded-circle" src="<?php echo base_url()."assets/";?>img/profile_small.jpg"/>
+                    <img alt="image" class="rounded-circle" width="48" height="48" src="<?=base_url().$data_user->profile_photo;?>"/>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="block m-t-xs font-bold">David Williams</span>
-                        <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                        <span class="block m-t-xs font-bold"><?=$data_user->name;?></span>
+                        <span class="text-muted text-xs block"><?=$data_user->rol;?> <b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="<?php echo base_url();?>public_pages/profile_user">Profile</a></li>
                         <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
                         <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        <li><a class="dropdown-item" href="<?php echo base_url();?>auth/loginout">Logout</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -161,7 +161,6 @@
                     <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
                 </ul>
             </li>
-
             <li>
                 <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
             </li>
@@ -230,6 +229,5 @@
                 <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
             </li>
         </ul>
-
     </div>
 </nav>

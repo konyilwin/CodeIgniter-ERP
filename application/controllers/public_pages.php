@@ -1,20 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends MY_Controller {
+class Public_pages extends MY_Controller {
 
     function __construct()
     {
         parent::__construct();
     }
-    public function index()
+    public function profile_user()
     {
         if (!$this->session->userdata('user')) {
             redirect(base_url('/'));
         } else {
-
-            $this->render('dashboard/home');
+            $this->data['pagetitle'] = 'Profile user';
+            $this->render('public/profile_user');
         }
 
     }
-
 }
