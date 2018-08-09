@@ -40,7 +40,8 @@ class auth extends MY_Controller
     }
 
     protected function db_getUserByLogin($user, $pass){
-        $where = array('email' => $user, 'AES_DECRYPT(password,\'xWxZz\')' => $pass);
+        $where = "AES_DECRYPT(password,'xWxZz') = '$pass' AND (login = '$user' OR email = '$user')";
+        //$where = array('AES_DECRYPT(password,\'xWxZz\')' => $pass);
         $query = $this->CRUD->read_where("users", $where);
         $result = (count($query) > 0) ? $query[0] : false;
         if($result) {

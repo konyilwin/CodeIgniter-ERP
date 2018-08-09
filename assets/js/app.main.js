@@ -10,8 +10,9 @@ class Auth extends Help {
                 },
                 success: (data) => {
                     if (!data) {
-                        super.userNotify(c.USER_LOGIN_INCORRECT, 'warning')
+                        super.userNotify(c.USER_LOGIN_INCORRECT, 'warning');
                     } else if(data.active > 0) {
+                        super.userNotify(c.USER_LOGIN_SUCCESS, 'success');
                         window.location.replace('../dashboard');
                     }else{
                         super.userNotify(c.USER_DESACTIVE, 'danger')

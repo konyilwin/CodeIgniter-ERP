@@ -4,7 +4,7 @@
     $(document).ready(()=> {
         $('body').keyup((e) => {
             if (e.keyCode === 13) {
-                ($('#username').val() && $('#password').val()) ? auth.login() : alert('Completed all fields!');
+                ($('#username').val() && $('#password').val()) ? auth.login() : $('.form-group').addClass('has-error');
             }
         });
     });
@@ -53,8 +53,10 @@
                         <div class="sk-rect5"></div>
                     </div>
                     <form action="" id="fromLogin">
+
+
                         <div class="form-group">
-                            <input type="email" class="form-control" id="username" placeholder="Username" name="username"/>
+                            <input type="email" class="form-control" id="username" placeholder="Username or password" name="username"/>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" placeholder="Password" name="password"/>
