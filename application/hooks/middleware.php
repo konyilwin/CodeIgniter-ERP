@@ -33,9 +33,16 @@ class permission {
             if ($this->url == '/') {
                 redirect(base_url('dashboard/'), 'location');
             }
-
-            if ($this->url == "public_pages/profile_user") {
-                redirect(base_url() . 'auth/error_403');
+            if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+                strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'
+            ){
+                //Ejecuta si la petición es a través de AJAX.
+                echo json_encode('Errro 403');
+            }else{
+                //Ejecuta si la petición es a través de URL.
+                if ($this->url == "workspace/profile") {
+                   // redirect(base_url() . 'auth/error_403');
+                }
             }
         }
     }

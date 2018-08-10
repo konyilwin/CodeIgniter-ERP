@@ -2,10 +2,16 @@
 <script>
     let auth = new Auth();
     $(document).ready(()=> {
+        const login  = () => ($('#username').val()  !== '' && $('#password').val() !== '') ? auth.login() : $('.form-group').addClass('has-error');
         $('body').keyup((e) => {
             if (e.keyCode === 13) {
-                ($('#username').val() && $('#password').val()) ? auth.login() : $('.form-group').addClass('has-error');
+                console.log();
+                login();
             }
+        });
+        $('#btnSubmit').on('click',(e)=>{
+            e.preventDefault();
+            login();
         });
     });
 </script>
@@ -61,7 +67,7 @@
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" placeholder="Password" name="password"/>
                         </div>
-                        <button type="button" class="btn btn-primary block full-width m-b"  onclick="auth.login();">
+                        <button type="button" class="btn btn-primary block full-width m-b" id="btnSubmit">
                             Login
                         </button>
                         <div class="col-md-12" id="alert"></div>

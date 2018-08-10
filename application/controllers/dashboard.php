@@ -8,12 +8,8 @@ class Dashboard extends MY_Controller {
     }
     public function index()
     {
-        if (!$this->session->userdata('user')) {
-            redirect(base_url('/'));
-        } else {
 
-            $this->render('dashboard/home');
-        }
+   $this->render('dashboard/home');
 
     }
 
