@@ -8,11 +8,7 @@ class Welcome extends MY_Controller {
     }
     public function index()
     {
-        if ($this->session->userdata('user')) {
-            redirect(base_url('dashboard/'));
-        }else{
-           redirect(base_url('/auth/login'), 'location');
-        }
+        redirect(base_url('dashboard/'));
     }
 
 }

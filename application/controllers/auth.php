@@ -6,37 +6,35 @@ class auth extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->data['pagetitle'] = 'CodeIgniter ERP';
+
     }
 
     public function login()
     {
-        if ($this->session->userdata('user')) {
-            redirect(base_url('dashboard/'));
-        } else {
-            $this->render('auth/login', 'empty');
-        }
+        $this->data['pagetitle'] = 'Login';
+        $this->render('auth/login', 'empty');
     }
 
     public function forgotPassword()
     {
+        $this->data['pagetitle'] = 'Recover password';
         $this->render('auth/forgot_password', 'empty');
     }
 
-
-    public function validateLogin(){
-        if(!$data = $this->input->post()){
-            redirect(base_url('/'));
-        }else{
-            $result = $this->db_getUserByLogin($data['username'],$data['password']);
-            if (!$result) {
-                echo json_encode($result);
-            } else {
-                unset($result->password);
-                if($result->active != 0){ $this->session->set_userdata('user', $result); }
-                echo json_encode($result);
+    public function validateLogin()
+    {
+        $data = $this->input->post();
+        $result = $this->db_getUserByLogin($data['username'], $data['password']);
+        if (!$result) {
+            echo json_encode($result);
+        } else {
+            unset($result->password);
+            if ($result->active != 0) {
+                $this->session->set_userdata('user', $result);
             }
+            echo json_encode($result);
         }
+
     }
 
     protected function db_getUserByLogin($user, $pass){
@@ -56,5 +54,10 @@ class auth extends MY_Controller
     {
         $this->session->sess_destroy();
         redirect(base_url());
+    }
+
+    public function error_403(){
+        $this->data['pagetitle'] = 'Error 403';
+        $this->render('errors/html/error_403.php');
     }
 }
