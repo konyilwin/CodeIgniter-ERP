@@ -37,7 +37,7 @@ class permission {
                 strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'
             ){
                 //Ejecuta si la petición es a través de AJAX.
-                echo json_encode('Errro 403');
+                //echo json_encode('Errro 403');
             }else{
                 //Ejecuta si la petición es a través de URL.
                 if ($this->url == "workspace/profile") {

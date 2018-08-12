@@ -114,6 +114,26 @@ class CRUD extends CI_Model
         }
     }
 
+    public function read_join($table, $join, $where='', $select = "*", $order=''){
+        if($select != "*"){
+            $this->db->select($select);
+        }else{
+            $this->db->select('*');
+        }
+        $this->db->from($table);
+        $this->db->join(key($join), $join[key($join)]);
+        if(!empty($where)){
+            $this->db->where($where);
+        }
+        if($order != ''){
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
     public function read_data_table($table, $where='')
     {
 
@@ -230,10 +250,8 @@ class CRUD extends CI_Model
     {
 
         $this->db->where(key($whereId), $whereId[key($whereId)]);
-        $this->db->update($table, $data);
-        $items['num_err'] = $this->db->_error_number();
-        $items['mens_err'] = $this->db->_error_message();
-        detail_message($items, 'UPDATE');
+        $result = $this->db->update($table, $data);
+       return $result;
     }
 
     public function edit_much()

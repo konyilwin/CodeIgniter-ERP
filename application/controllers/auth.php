@@ -24,11 +24,11 @@ class auth extends MY_Controller
     public function validateLogin()
     {
         $data = $this->input->post();
-        $result = $this->db_getUserByLogin($data['username'], $data['password']);
+        $result = $this->db_getDataUser($data['username'], $data['password']);
         if (!$result) {
             echo json_encode($result);
         } else {
-            unset($result->password);
+
             if ($result->active != 0) {
                 $this->session->set_userdata('user', $result);
             }
@@ -37,18 +37,35 @@ class auth extends MY_Controller
 
     }
 
-    protected function db_getUserByLogin($user, $pass){
+    protected function db_getDataUser($user, $pass){
         $where = "AES_DECRYPT(password,'xWxZz') = '$pass' AND (login = '$user' OR email = '$user')";
-        //$where = array('AES_DECRYPT(password,\'xWxZz\')' => $pass);
         $query = $this->CRUD->read_where("users", $where);
         $result = (count($query) > 0) ? $query[0] : false;
         if($result) {
-            $where = array('id_profile' => $result->id_profile);
-            $rol = $this->CRUD->read_field_table("profile", 'user_profile', $where);
-            $result->rol = $rol[0]->profile;
+            unset($result->password);
+            $result->rol = $this->db_getRoles($result->id_roles);
+            $result->routes = $this->db_getRoutes($result->id_roles);
         }
         return $result;
     }
+
+    protected function db_getRoles($idProfile){
+        $where = array('id_roles' => $idProfile);
+        $query = $this->CRUD->read_field_table("roles", 'user_roles', $where);
+        $result = (count($query) > 0) ? $query[0]->roles : false;
+        return $result;
+    }
+
+    protected function db_getRoutes($idRol){
+        $where = array('user_access.id_roles' => $idRol);
+        $join  = array('user_access'=>'user_access.id_routes = user_routes.id_menu');
+        $order = array('MenPosicion'=>'ASC');
+        $query = $this->CRUD->read_join("user_routes",$join, $where,'*',$order);
+        $result = (count($query) > 0) ? $query : false;
+        return $result;
+    }
+
+
 
     public function loginOut()
     {

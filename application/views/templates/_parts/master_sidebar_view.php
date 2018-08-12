@@ -1,9 +1,17 @@
+<script>
+    $(document).ready(()=> {
+        $('#btnSubmit').on('click',(e)=>{
+            e.preventDefault();
+            login();
+        });
+    });
+</script>
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <img alt="image" class="rounded-circle" width="48" height="48" src="<?=base_url().$data_user->profile_photo;?>"/>
+                    <img alt="image" class="rounded-circle" width="48" height="48" src="<?=base_url().$data_user->avatar;?>"/>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="block m-t-xs font-bold"><?=$data_user->name;?></span>
                         <span class="text-muted text-xs block"><?=$data_user->rol;?> <b class="caret"></b></span>
@@ -20,7 +28,39 @@
                     IN+
                 </div>
             </li>
-            <li class="active">
+            <?php
+            forEach($data_user->routes as $routes):
+            $idPather = $routes->id_menu;
+                if ($routes->MenParentId == 0): ?>
+                    <li>
+                        <a href="index.html"><i class="<?= $routes->MenIcono;?>"></i>
+                            <span class="nav-label"><?= $routes->MenNavegacion;?></span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <?php forEach ($data_user->routes as $routes):
+                                if ($idPather == $routes->MenParentId):
+                                    ?>
+                                    <li><a href="index.html"><?= $routes->MenNavegacion ?></a></li>
+                                <?php endif; endforeach; ?>
+                        </ul>
+                    </li>
+
+            <?php
+            endif;
+            endforeach; ?>
+            <li class="landing_link">
+                <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning float-right">NEW</span></a>
+            </li>
+            <li class="special_link">
+                <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Antiguo menu ---
+   <li class="active">
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li><a href="index.html">Dashboard v.1</a></li>
@@ -222,12 +262,5 @@
             <li>
                 <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
             </li>
-            <li class="landing_link">
-                <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning float-right">NEW</span></a>
-            </li>
-            <li class="special_link">
-                <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
+            -->

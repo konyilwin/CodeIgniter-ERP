@@ -5,7 +5,7 @@
             <div class="row m-b-lg m-t-lg">
                 <div class="col-md-6">
                     <div class="profile-image">
-                        <img src="<?=base_url().$data_user->profile_photo;?>" class="rounded-circle circle-border m-b-md" alt="profile">
+                        <img src="<?=base_url().$data_user->avatar;?>" class="rounded-circle circle-border m-b-md" alt="profile">
                     </div>
                     <div class="profile-info">
                         <div class="">
