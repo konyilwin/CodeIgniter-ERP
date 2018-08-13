@@ -1,9 +1,8 @@
 <script>
     $(document).ready(()=> {
-        $('#btnSubmit').on('click',(e)=>{
-            e.preventDefault();
-            login();
-        });
+        $("#side-menu li").removeClass("active");
+        $("li:contains('Dashboard')").addClass('active');
+
     });
 </script>
 <nav class="navbar-default navbar-static-side" role="navigation">
@@ -33,7 +32,7 @@
             $idPather = $routes->id_menu;
                 if ($routes->MenParentId == 0): ?>
                     <li>
-                        <a href="index.html"><i class="<?= $routes->MenIcono;?>"></i>
+                        <a href="<?= $routes->MenPagina;?>"><i class="<?= $routes->MenIcono;?>"></i>
                             <span class="nav-label"><?= $routes->MenNavegacion;?></span>
                             <span class="fa arrow"></span>
                         </a>
@@ -41,7 +40,7 @@
                             <?php forEach ($data_user->routes as $routes):
                                 if ($idPather == $routes->MenParentId):
                                     ?>
-                                    <li><a href="index.html"><?= $routes->MenNavegacion ?></a></li>
+                                    <li><a href="<?= $routes->MenPagina;?>"><?= $routes->MenNavegacion ?></a></li>
                                 <?php endif; endforeach; ?>
                         </ul>
                     </li>
