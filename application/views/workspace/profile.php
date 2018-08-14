@@ -1,7 +1,8 @@
 <div class="fh-breadcrumb">
     <div class="full-height">
         <div class="full-height-scroll white-bg border-left">
-            <div class="wrapper wrapper-content animated fadeInRight gray-bg">
+            <!--  animated fadeInRight -->
+            <div class="wrapper wrapper-content  gray-bg">
             <div class="row m-b-lg m-t-lg">
                 <div class="col-md-6">
                     <div class="profile-image">

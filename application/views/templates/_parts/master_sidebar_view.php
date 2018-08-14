@@ -1,9 +1,12 @@
 <script>
-    $(document).ready(()=> {
-        $("#side-menu li").removeClass("active");
-        $("li:contains('Dashboard')").addClass('active');
 
+    $(document).ready(()=> {
+        let finalPath = window.location.href.split('/').reverse()[0];
+        console.log(finalPath); //print finalPath
+        $("#side-menu li").removeClass("active");
+        $("li:contains('"+finalPath+"')").addClass('active');
     });
+
 </script>
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
@@ -32,7 +35,7 @@
             $idPather = $routes->id_menu;
                 if ($routes->MenParentId == 0): ?>
                     <li>
-                        <a href="<?= $routes->MenPagina;?>"><i class="<?= $routes->MenIcono;?>"></i>
+                        <a href="<?=base_url().$routes->MenPagina;?>"><i class="<?= $routes->MenIcono;?>"></i>
                             <span class="nav-label"><?= $routes->MenNavegacion;?></span>
                             <span class="fa arrow"></span>
                         </a>
@@ -40,7 +43,7 @@
                             <?php forEach ($data_user->routes as $routes):
                                 if ($idPather == $routes->MenParentId):
                                     ?>
-                                    <li><a href="<?= $routes->MenPagina;?>"><?= $routes->MenNavegacion ?></a></li>
+                                    <li><a href="<?=base_url().$routes->MenPagina;?>"><?= $routes->MenNavegacion ?></a></li>
                                 <?php endif; endforeach; ?>
                         </ul>
                     </li>
