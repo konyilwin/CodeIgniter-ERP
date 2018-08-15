@@ -1,13 +1,14 @@
 <script>
-
-    $(document).ready(()=> {
-        let finalPath = window.location.href.split('/').reverse()[0];
-        console.log(finalPath); //print finalPath
-        $("#side-menu li").removeClass("active");
-        $("li:contains('"+finalPath+"')").addClass('active');
-    });
-
+    // $(document).ready(()=> {
+    //     let finalPath = window.location.href.split('/').reverse()[0];
+    //     console.log(finalPath); //print finalPath
+    //     $("#side-menu li").removeClass("active");
+    //     $("li:contains('"+finalPath+"')").addClass('active');
+    // });
 </script>
+
+<?=$activeMenu ?>
+
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
@@ -34,7 +35,8 @@
             forEach($data_user->routes as $routes):
             $idPather = $routes->id_menu;
                 if ($routes->MenParentId == 0): ?>
-                    <li>
+
+                    <li class="<?php echo ($activeMenu == $routes->MenNavegacion) ? 'active' : '' ?>">
                         <a href="<?=base_url().$routes->MenPagina;?>"><i class="<?= $routes->MenIcono;?>"></i>
                             <span class="nav-label"><?= $routes->MenNavegacion;?></span>
                             <span class="fa arrow"></span>
@@ -42,8 +44,12 @@
                         <ul class="nav nav-second-level">
                             <?php forEach ($data_user->routes as $routes):
                                 if ($idPather == $routes->MenParentId):
-                                    ?>
-                                    <li><a href="<?=base_url().$routes->MenPagina;?>"><?= $routes->MenNavegacion ?></a></li>
+                                    if($activeMenu == $routes->MenNavegacion){
+                                        echo '<li class="active">';
+                                    }else{
+                                        echo '<li>';
+                                    } ?>
+                                        <a href="<?=base_url().$routes->MenPagina;?>"><?= $routes->MenNavegacion ?></a></li>
                                 <?php endif; endforeach; ?>
                         </ul>
                     </li>

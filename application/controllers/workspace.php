@@ -12,6 +12,7 @@ class Workspace extends MY_Controller {
             redirect(base_url('/'));
         } else {
             $this->data['pagetitle'] = 'Profile user';
+            $this->data['activeMenu'] = 'profile';
             $this->render('workspace/profile');
         }
 
