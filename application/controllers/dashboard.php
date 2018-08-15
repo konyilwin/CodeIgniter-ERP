@@ -8,7 +8,8 @@ class Dashboard extends MY_Controller {
     }
     public function index()
     {
-   $this->data['activeMenu'] = 'Dashboard';
+   $this->data['module'][0] = 'Dashboard';
+   $this->data['module'][1] = 'home';
    $this->render('dashboard/home');
 
     }

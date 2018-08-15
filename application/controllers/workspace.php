@@ -8,13 +8,22 @@ class Workspace extends MY_Controller {
     }
     public function profile()
     {
-        if (!$this->session->userdata('user')) {
-            redirect(base_url('/'));
-        } else {
             $this->data['pagetitle'] = 'Profile user';
-            $this->data['activeMenu'] = 'profile';
+            $this->data['module'][0] = 'WorkSpace';
+            $this->data['module'][1] = 'profile';
             $this->render('workspace/profile');
-        }
-
+    }
+    public function mailBox()
+    {
+        $this->data['pagetitle'] = 'mailbox user';
+        $this->data['module'][0] = 'WorkSpace';
+        $this->data['module'][1] = 'MailBox';
+        $this->render('workspace/mailbox');
+    }
+    public function contacts(){
+        $this->data['pagetitle'] = 'mailbox user';
+        $this->data['module'][0] = 'WorkSpace';
+        $this->data['module'][1] = 'Contacts';
+        $this->render('workspace/contacts');
     }
 }

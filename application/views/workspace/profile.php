@@ -1,7 +1,6 @@
-<div class="fh-breadcrumb">
+<div class="fh-breadcrumb animated fadeInUp">
     <div class="full-height">
         <div class="full-height-scroll white-bg border-left">
-            <!--  animated fadeInRight -->
             <div class="wrapper wrapper-content  gray-bg">
             <div class="row m-b-lg m-t-lg">
                 <div class="col-md-6">
@@ -61,7 +60,6 @@
                 </div>
             </div>
             <div class="row">
-
                 <div class="col-lg-3">
 
                     <div class="ibox">
@@ -142,7 +140,6 @@
                     </div>
 
                 </div>
-
                 <div class="col-lg-5">
 
                     <div class="social-feed-box">
@@ -402,7 +399,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
         </div>
