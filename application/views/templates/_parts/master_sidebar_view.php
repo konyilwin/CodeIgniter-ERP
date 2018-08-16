@@ -28,8 +28,11 @@
                     <li class="<?php echo ($module[0] == $routes->MenNavegacion) ? 'active' : '' ?>">
                         <a href="<?=base_url().$routes->MenPagina;?>"><i class="<?= $routes->MenIcono;?>"></i>
                             <span class="nav-label"><?= $routes->MenNavegacion;?></span>
+                            <?php if($routes->MenIcono_flecha == 'true'): ?>
                             <span class="fa arrow"></span>
+                            <?php endif; ?>
                         </a>
+                        <?php if($routes->MenIcono_flecha == 'true'): ?>
                         <ul class="nav nav-second-level">
                             <?php forEach ($data_user->routes as $routes):
                                 if ($idPather == $routes->MenParentId):
@@ -41,6 +44,7 @@
                                         <a href="<?=base_url().$routes->MenPagina;?>"><?= $routes->MenNavegacion ?></a></li>
                                 <?php endif; endforeach; ?>
                         </ul>
+                        <?php endif; ?>
                     </li>
 
             <?php
