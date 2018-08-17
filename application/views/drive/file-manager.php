@@ -1,13 +1,14 @@
 <link href="<?php echo base_url() . "assets/"; ?>css/plugins/jsTree/style.min.css" rel="stylesheet">
 <script src="<?php echo base_url() . "assets/"; ?>js/plugins/jsTree/jstree.min.js"></script>
-<div class="fh-breadcrumb ">
+
+<div class="fh-breadcrumb">
     <div class="fh-column">
         <div class="full-height-scroll">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-content">
                     <div class="file-manager">
                         <h5><i class="fa fa-eye-slash"></i> <span class="font-bold text-navy">Show</span></h5>
-                        <a href="#" class="file-control active">Ale</a>
+                        <a href="#" class="file-control active">All</a>
                         <a href="#" class="file-control">Documents</a>
                         <a href="#" class="file-control">Audio</a>
                         <a href="#" class="file-control">Images</a>
@@ -17,7 +18,7 @@
                         <h5><i class="fa fa-hdd-o"></i> <span class="font-bold text-navy">Folders</span></h5>
                         <div id="jstree1">
                             <ul>
-                                <li class="jstree-open">Admin theme
+                                <li class="jstree">Admin theme
                                     <ul>
                                         <li>css
                                             <ul>
@@ -98,15 +99,18 @@
                             <li><a href="">Photography</a></li>
                             <li><a href="">Film</a></li>
                         </ul>
+
                         <div class="clearfix"></div>
+                        <div class="hr-line-dashed"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="full-height animated fadeInUp">
-        <div class="full-height-scroll border-left gray-bg">
+    <div class="full-height white-bg ">
+        <div class="full-height-scroll gray-bg border-left">
             <div class="wrapper wrapper-content">
+                <div class="tab-content">
                     <div class="file-box">
                         <div class="file">
                             <a href="#">
@@ -458,6 +462,7 @@
                             </div>
                         </a>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -476,7 +481,6 @@
 
 <script>
     $(document).ready(function(){
-
         $('#jstree1').jstree({
             'core' : {
                 'check_callback' : true
@@ -504,91 +508,5 @@
 
             }
         });
-
-        $('#using_json').jstree({
-            'core' : {
-                'data' : [
-                    'Empty Folder',
-                    {
-                        'text': 'Resources',
-                        'state': {
-                            'opened': true
-                        },
-                        'children': [
-                            {
-                                'text': 'css',
-                                'children': [
-                                    {
-                                        'text': 'animate.css', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'bootstrap.css', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'main.css', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'style.css', 'icon': 'none'
-                                    }
-                                ],
-                                'state': {
-                                    'opened': true
-                                }
-                            },
-                            {
-                                'text': 'js',
-                                'children': [
-                                    {
-                                        'text': 'bootstrap.js', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'inspinia.min.js', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'jquery.min.js', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'jsTree.min.js', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'custom.min.js', 'icon': 'none'
-                                    }
-                                ],
-                                'state': {
-                                    'opened': true
-                                }
-                            },
-                            {
-                                'text': 'html',
-                                'children': [
-                                    {
-                                        'text': 'layout.html', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'navigation.html', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'navbar.html', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'footer.html', 'icon': 'none'
-                                    },
-                                    {
-                                        'text': 'sidebar.html', 'icon': 'none'
-                                    }
-                                ],
-                                'state': {
-                                    'opened': true
-                                }
-                            }
-                        ]
-                    },
-                    'Fonts',
-                    'Images',
-                    'Scripts',
-                    'Templates',
-                ]
-            } });
-
     });
 </script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2018 a las 07:18:58
+-- Tiempo de generación: 17-08-2018 a las 07:22:55
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -21,26 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `uniprint`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ci_sessions`
---
-
-CREATE TABLE `ci_sessions` (
-  `id` varchar(128) NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `data` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `ci_sessions`
---
-
-INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
-('2sli6gqnbqoh7m1ammg0e0fgk11eiag8', '::1', 1533877729, 0x5f5f63695f6c6173745f726567656e65726174657c693a313533333837373732393b757365727c4f3a383a22737464436c617373223a31333a7b733a373a2269645f75736572223b733a333a22313230223b733a393a2269645f6e756d626572223b733a31303a2234353436363534353634223b733a373a2269645f74797065223b733a333a22444e49223b733a343a226e616d65223b733a31313a224a6573757320506572657a223b733a353a226c6f67696e223b733a373a226a617370343032223b733a353a22656d61696c223b733a31373a226a61737034303240676d61696c2e636f6d223b733a353a2270686f6e65223b733a303a22223b733a393a22646972656363696f6e223b733a303a22223b733a31333a2270726f66696c655f70686f746f223b733a32313a226173736574732f696d672f6170702f61312e6a7067223b733a31303a2269645f70726f66696c65223b733a313a2231223b733a31373a2269645f73657474696e67735f7468656d65223b733a323a223134223b733a363a22616374697665223b733a313a2231223b733a333a22726f6c223b733a393a225765624d6173746572223b7d),
 
 -- --------------------------------------------------------
 
@@ -4488,7 +4468,6 @@ INSERT INTO `user_access` (`id`, `id_routes`, `id_roles`, `active`) VALUES
 (77, 30, 1, 1),
 (79, 32, 1, 1),
 (80, 33, 1, 1),
-(81, 34, 1, 1),
 (82, 35, 1, 1),
 (83, 36, 1, 1),
 (85, 38, 1, 1),
@@ -4569,13 +4548,12 @@ INSERT INTO `user_routes` (`id_menu`, `MenParentId`, `MenTitulo`, `MenNavegacion
 (25, 0, 'MODULO 7', 'Dashboard', 'Dashboard', 'fa fa-desktop', 0, 0, 'false', NULL, NULL),
 (27, 0, 'MODULO 8', 'Company', '#', 'fa fa-sitemap', 1, 0, 'true', NULL, NULL),
 (28, 27, '', 'Structure', 'company/structure', NULL, 2, 0, '', NULL, NULL),
-(29, 27, '', 'Employees', 'employees', NULL, 1, 0, '', NULL, NULL),
+(29, 27, '', 'Employees', 'company/employees', NULL, 1, 0, '', NULL, NULL),
 (30, 27, '', 'Settings', 'settings', NULL, 3, 0, '', NULL, NULL),
 (32, 0, 'MODULO 9', 'WorkSpace', '#', 'fa  fa-address-book-o', 2, 0, 'true', NULL, NULL),
-(33, 32, '', 'profile', 'workspace/profile', NULL, 1, 0, '', NULL, NULL),
-(34, 32, '', 'Workgroup', 'workgroup', NULL, 4, 0, '', NULL, NULL),
+(33, 32, '', 'profile', 'workspace/profile', NULL, 4, 0, '', NULL, NULL),
 (35, 32, '', 'Contacts', 'workspace/contacts', NULL, 3, 0, '', NULL, NULL),
-(36, 32, '', 'Activity Stream', 'activitystream', NULL, 5, 0, '', NULL, NULL),
+(36, 32, '', 'Activity Stream', 'workspace/activitystream', NULL, 1, 0, '', NULL, NULL),
 (38, 32, '', 'MailBox', 'workspace/MailBox', NULL, 2, 0, '', NULL, NULL),
 (39, 0, 'MODULO 10', 'Drive', 'drive', 'fa  fa-cloud-upload', 3, 0, 'false', NULL, NULL);
 
@@ -4619,12 +4597,6 @@ INSERT INTO `user_settings_theme` (`id_settings_theme`, `skin`, `tipo_menu`, `ti
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `ci_sessions`
---
-ALTER TABLE `ci_sessions`
-  ADD KEY `ci_sessions_timestamp` (`timestamp`);
 
 --
 -- Indices de la tabla `sys_categorias`

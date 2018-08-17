@@ -26,4 +26,10 @@ class Workspace extends MY_Controller {
         $this->data['module'][1] = 'Contacts';
         $this->render('workspace/contacts');
     }
+    public function activityStream(){
+        $this->data['pagetitle'] = 'Activity Stream';
+        $this->data['module'][0] = 'WorkSpace';
+        $this->data['module'][1] = 'Activity Stream';
+        $this->render('workspace/activitystream');
+    }
 }

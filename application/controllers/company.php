@@ -13,5 +13,11 @@ class Company extends MY_Controller {
         $this->render('company/structure');
 
     }
+    public function employees()
+    {
+        $this->data['module'][0] = 'Company';
+        $this->data['module'][1] = 'Employees';
+        $this->render('company/employees');
+    }
 
 }
