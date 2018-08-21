@@ -28,6 +28,7 @@
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.spline.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.resize.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="<?php echo base_url()."assets/";?>js/plugins/chartJs/Chart.min.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.symbol.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.time.js"></script>
 <!-- Sparkline -->

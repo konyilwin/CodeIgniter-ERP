@@ -8,7 +8,7 @@
                         <span class="block m-t-xs font-bold"><?=$data_user->name;?></span>
                         <span class="text-muted text-xs block"><?=$data_user->rol;?> <b class="caret"></b></span>
                     </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                    <ul class="dropdown-menu m-t-xs">
                         <li><a class="dropdown-item" href="<?php echo base_url();?>workspace/profile">Profile</a></li>
                         <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
                         <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>

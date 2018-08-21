@@ -1,8 +1,45 @@
 <div class="fh-breadcrumb">
-
+    <div class="fh-column">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="file-manager">
+                        <h5><i class="fa fa-eye-slash"></i> <span class="font-bold text-navy">Show</span></h5>
+                        <a href="#" class="file-control active">All</a>
+                        <a href="#" class="file-control">Documents</a>
+                        <a href="#" class="file-control">Audio</a>
+                        <a href="#" class="file-control">Images</a>
+                        <div class="hr-line-dashed"></div>
+                        <button class="btn btn-primary btn-block">Upload Files</button>
+                        <div class="hr-line-dashed"></div>
+                        <h5><i class="fa fa-star"></i> <span class="font-bold text-navy">Favorites</span></h5>
+                        <ul class="folder-list" style="padding: 0">
+                            <li><a href=""><i class="fa fa-folder"></i> Files</a></li>
+                            <li><a href=""><i class="fa fa-folder"></i> Pictures</a></li>
+                            <li><a href=""><i class="fa fa-folder"></i> Web pages</a></li>
+                            <li><a href=""><i class="fa fa-folder"></i> Illustrations</a></li>
+                            <li><a href=""><i class="fa fa-folder"></i> Films</a></li>
+                            <li><a href=""><i class="fa fa-folder"></i> Books</a></li>
+                        </ul>
+                        <h5 class="tag-title"><i class="fa fa-tags"></i> <span class="font-bold text-navy">Tags</span></h5>
+                        <ul class="tag-list" style="padding: 0">
+                            <li><a href="">Family</a></li>
+                            <li><a href="">Work</a></li>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Children</a></li>
+                            <li><a href="">Holidays</a></li>
+                            <li><a href="">Music</a></li>
+                            <li><a href="">Photography</a></li>
+                            <li><a href="">Film</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <div class="hr-line-dashed"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
     <div class="full-height white-bg ">
         <div class="full-height-scroll gray-bg border-left">
-            <div class="wrapper wrapper-content">
+            <div class="wrapper wrapper-content animated fadeInUp">
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="ibox">
