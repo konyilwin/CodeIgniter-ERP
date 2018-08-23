@@ -8,6 +8,7 @@ class Company extends MY_Controller {
     }
     public function structure()
     {
+        $this->data['pagetitle'] = 'Structure';
         $this->data['module'][0] = 'Company';
         $this->data['module'][1] = 'Structure';
         $this->render('company/structure');
@@ -15,6 +16,7 @@ class Company extends MY_Controller {
     }
     public function employees()
     {
+        $this->data['pagetitle'] = 'Employees';
         $this->data['module'][0] = 'Company';
         $this->data['module'][1] = 'Employees';
         $this->render('company/employees');

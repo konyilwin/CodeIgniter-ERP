@@ -384,17 +384,18 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="ibox selected">
-
+                            <div class="ibox-content ibox-heading">
+                                <h2>Nicki Smith</h2>
+                                <small><i class="fa fa-briefcase"></i> Development. Check your schedule to see detail.</small>
+                            </div>
                             <div class="ibox-content">
+
                                 <div class="tab-content">
                                     <div id="contact-1" class="tab-pane active">
                                         <div class="row m-b-lg">
                                             <div class="col-lg-4 text-center">
-                                                <h2>Nicki Smith</h2>
-
                                                 <div class="m-b-sm">
-                                                    <img alt="image" class="rounded-circle" src="<?php echo base_url()."assets/"; ?>img/a2.jpg"
-                                                         style="width: 62px">
+                                                    <img alt="image" class="img-lg border-bottom border-right" src="<?php echo base_url()."assets/"; ?>img/a2.jpg">
                                                 </div>
                                             </div>
                                             <div class="col-lg-8">
@@ -411,33 +412,8 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="client-detail">
+                                        <div class="full-height">
                                             <div class="full-height-scroll">
-
-                                                <strong>Last activity</strong>
-
-                                                <ul class="list-group clear-list">
-                                                    <li class="list-group-item fist-item">
-                                                        <span class="float-right"> 09:00 pm </span>
-                                                        Please contact me
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <span class="float-right"> 10:16 am </span>
-                                                        Sign a contract
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <span class="float-right"> 08:22 pm </span>
-                                                        Open new shop
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <span class="float-right"> 11:06 pm </span>
-                                                        Call back to Sylvia
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <span class="float-right"> 12:00 am </span>
-                                                        Write a letter to Sandra
-                                                    </li>
-                                                </ul>
                                                 <strong>Notes</strong>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -457,26 +433,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="vertical-timeline-block">
-                                                        <div class="vertical-timeline-icon gray-bg">
-                                                            <i class="fa fa-briefcase"></i>
-                                                        </div>
-                                                        <div class="vertical-timeline-content">
-                                                            <p>Many desktop publishing packages and web page editors now use Lorem.
-                                                            </p>
-                                                            <span class="vertical-date small text-muted"> 4:20 pm - 10.05.2014 </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-block">
-                                                        <div class="vertical-timeline-icon gray-bg">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </div>
-                                                        <div class="vertical-timeline-content">
-                                                            <p>There are many variations of passages of Lorem Ipsum available.
-                                                            </p>
-                                                            <span class="vertical-date small text-muted"> 06:10 pm - 11.03.2014 </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-block">
                                                         <div class="vertical-timeline-icon navy-bg">
                                                             <i class="fa fa-warning"></i>
                                                         </div>
@@ -484,16 +440,6 @@
                                                             <p>The generated Lorem Ipsum is therefore.
                                                             </p>
                                                             <span class="vertical-date small text-muted"> 02:50 pm - 03.10.2014 </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="vertical-timeline-block">
-                                                        <div class="vertical-timeline-icon gray-bg">
-                                                            <i class="fa fa-coffee"></i>
-                                                        </div>
-                                                        <div class="vertical-timeline-content">
-                                                            <p>Conference on the sales results for the previous year.
-                                                            </p>
-                                                            <span class="vertical-date small text-muted"> 2:10 pm - 12.06.2014 </span>
                                                         </div>
                                                     </div>
                                                     <div class="vertical-timeline-block">
@@ -533,7 +479,7 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="client-detail">
+                                        <div class="full-height">
                                             <div class="full-height-scroll">
 
                                                 <strong>Last activity</strong>
