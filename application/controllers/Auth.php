@@ -12,7 +12,8 @@ class auth extends MY_Controller
     public function login()
     {
         $this->data['pagetitle'] = 'Login';
-        $this->render('auth/login', 'empty');
+        //$this->render('auth/login', 'empty');
+        $this->render('auth/login_full', 'empty');
     }
 
     public function forgotPassword()

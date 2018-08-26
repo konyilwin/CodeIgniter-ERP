@@ -1,5 +1,6 @@
 <div class="fh-breadcrumb">
     <div class="fh-column">
+        <div class="full-height-scroll">
             <div class="ibox">
                 <div class="ibox-content">
                     <div class="file-manager">
@@ -36,6 +37,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="full-height white-bg ">
         <div class="full-height-scroll gray-bg border-left">
@@ -383,6 +385,28 @@
                         </div>
                     </div>
                     <div class="col-sm-4">
+                        <div class="widget-head-color-box navy-bg text-center" style="margin-top: 0px">
+                                <div class="m-b-md">
+                                    <h2 class="font-bold no-margins">
+                                        Alex Smith
+                                    </h2>
+                                    <small>Founder of Groupeq</small>
+                                </div>
+                                <img src="<?php echo base_url()."assets/"; ?>img/a4.jpg" class="rounded-circle circle-border m-b-md" alt="profile">
+                                <div>
+                                    <span>100 Tweets</span> |
+                                    <span>350 Following</span> |
+                                    <span>610 Followers</span>
+                                </div>
+                            </div>
+                        <div class="widget-text-box">
+                                <h4 class="media-heading">Alex Smith</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <div class="text-right">
+                                    <a href="" class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                    <a href="" class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                                </div>
+                            </div>
                         <div class="ibox selected">
                             <div class="ibox-content ibox-heading">
                                 <h2>Nicki Smith</h2>
@@ -392,26 +416,6 @@
 
                                 <div class="tab-content">
                                     <div id="contact-1" class="tab-pane active">
-                                        <div class="row m-b-lg">
-                                            <div class="col-lg-4 text-center">
-                                                <div class="m-b-sm">
-                                                    <img alt="image" class="img-lg border-bottom border-right" src="<?php echo base_url()."assets/"; ?>img/a2.jpg">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <strong>
-                                                    About me
-                                                </strong>
-
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua.
-                                                </p>
-                                                <button type="button" class="btn btn-primary btn-sm btn-block"><i
-                                                        class="fa fa-envelope"></i> Send Message
-                                                </button>
-                                            </div>
-                                        </div>
                                         <div class="full-height">
                                             <div class="full-height-scroll">
                                                 <strong>Notes</strong>
