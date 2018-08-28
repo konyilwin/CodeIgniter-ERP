@@ -26,13 +26,13 @@
                             <img src="<?php echo base_url()."assets/"; ?>img/landing/laptop.png" alt="laptop"/>
                         </div>
                         <div class="carousel-caption text-right">
-                            <h1>We craft<br/>
-                                brands, web apps,<br/>
-                                and user interfaces<br/>
-                                we are IN+ studio</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                            <h1>UN SOFTWARE <br>
+                                HECHO A LA MEDIDA  <br>
+                                DE TUS NECESIDADES <br>
+                                JASP402 | [ERP-SYSTEM] </h1>
+                            <p class="white-bg">MAS QUE UNA APLICACIÓN SOMOS CALIDAD EN SERVICIO</p>
                             <p>
-                                <a class="btn btn-lg btn-primary" href="#" role="button">READ MORE</a>
+                                <a class="btn btn-lg btn-primary" href="../shopping/blog" role="button">LEER MÁS</a>
                             </p>
                         </div>
                     </div>
@@ -43,30 +43,44 @@
                         <div class="row m-b-lg">
                             <div class="col-lg-12 text-center">
                                 <div class="navy-line"></div>
-                                <h1>Contact Us</h1>
-                                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+                                <h1>Contactanos</h1>
+                                <p>Sin limites ni fronteras, estamos a solo un clic de distancia.</p>
                             </div>
                         </div>
                         <div class="row m-b-lg justify-content-center">
-                            <div class="col-lg-3 ">
+                            <div class="col-lg-2">
+
+                            </div>
+                            <div class="col-lg-3">
                                 <address>
-                                    <strong><span class="navy">Company name, Inc.</span></strong><br>
+                                    <strong><span class="navy">Perú, Lima.</span></strong><br>
                                     795 Folsom Ave, Suite 600<br>
                                     San Francisco, CA 94107<br>
                                     <abbr title="Phone">P:</abbr> (123) 456-7890
                                 </address>
                             </div>
-                            <div class="col-lg-4">
-                                <p class="text-color">
-                                    Consectetur adipisicing elit. Aut eaque, totam corporis laboriosam veritatis quis ad perspiciatis, totam corporis laboriosam veritatis, consectetur adipisicing elit quos non quis ad perspiciatis, totam corporis ea,
-                                </p>
+                            <div class="col-lg-3">
+                                <address>
+                                    <strong><span class="navy">Ecuador, Quito.</span></strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                </address>
+                            </div>
+                            <div class="col-lg-3">
+                                <address>
+                                    <strong><span class="navy">Chile, Santiago.</span></strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                </address>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 text-center">
-                                <a href="mailto:test@email.com" class="btn btn-primary">Send us mail</a>
+                                <a href="mailto:test@email.com" class="btn btn-primary">Envia un e-mail</a>
                                 <p class="m-t-sm">
-                                    Or follow us on social platform
+                                    Síguenos en nuestras redes social
                                 </p>
                                 <ul class="list-inline social-icon">
                                     <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a>
@@ -80,7 +94,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 text-center m-t-lg m-b-lg">
-                                <p><strong>© 2015 Company Name</strong><br> consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                                <p><strong>JASP402 | ERP-SYSTEM </strong><br> Powered By CodeIgniter, Copyright © 2018 JASP402. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
@@ -93,8 +107,9 @@
         <div id="ibox">
             <div class="ibox-content">
                 <h2>JASP402 | [ERP-SYSTEM]</h2>
-                <small>Use el login y password para iniciar sessión</small>
-                <br>
+                <div class="tooltip-demo">
+                    <small>Use sus <a href="#" data-toggle="tooltip" data-placement="left" title="" data-original-title="El administrador del sistema es el responsable de asignar las credenciales de los usuarios de la organización">credenciales</a> para iniciar sesión</small>
+                </div>
                 <div class="sk-spinner sk-spinner-wave">
                     <div class="sk-rect1"></div>
                     <div class="sk-rect2"></div>
@@ -106,17 +121,19 @@
 
 
                     <div class="form-group">
-                        <input type="email" class="form-control" id="username" placeholder="Email or username" name="username">
+                        <input type="email" class="form-control" id="username" placeholder="correo o Nombre de usuario" name="username">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password">
                     </div>
                     <button type="button" class="btn btn-primary block full-width m-b" id="btnSubmit">
-                        Login <i class="fa fa-sign-in"></i>
+                        Ingresar <i class="fa fa-sign-in"></i>
                     </button>
                     <div class="col-md-12" id="alert"></div>
-                    <a class="btn btn-outline btn-info btn-block" href="http://jasp402.com/_systems/shopping/blog">Create an account <i class="fa fa-share-square-o"></i></a>
-                    <a class="btn btn-sm btn-white btn-block" href="http://jasp402.com/_systems/auth/forgotPassword"> <i class="fa fa-sign-in fa-flip-horizontal"></i> Forgot password?</a>
+                    <a class="btn btn-outline btn-info btn-block" href="../shopping/blog#pricing">Suscribete <i class="fa fa-share-square-o"></i></a>
+                    <br>
+                    <small><a href="http://jasp402.com/_systems/auth/forgotPassword"> ¿Se te olvidó tu contraseña?</a></small>
+
 
                 </form>
                 <hr>
