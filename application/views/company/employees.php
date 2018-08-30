@@ -4,15 +4,24 @@
             <div class="ibox">
                 <div class="ibox-content">
                     <div class="file-manager">
+                        <h5><i class="fa fa-search"></i> <span class="font-bold text-navy">Buscar</span></h5>
+                        <div class="input-group">
+                            <input type="text" placeholder="Nombre o codigo" class="input form-control small">
+                            <span class="input-group-append">
+                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i></button>
+                                </span>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <button class="btn btn-primary btn-block">Registrar Empleado</button>
+                        <div class="hr-line-dashed"></div>
                         <h5><i class="fa fa-eye-slash"></i> <span class="font-bold text-navy">Show</span></h5>
                         <a href="#" class="file-control active">All</a>
                         <a href="#" class="file-control">Documents</a>
                         <a href="#" class="file-control">Audio</a>
                         <a href="#" class="file-control">Images</a>
+
                         <div class="hr-line-dashed"></div>
-                        <button class="btn btn-primary btn-block">Upload Files</button>
-                        <div class="hr-line-dashed"></div>
-                        <h5><i class="fa fa-star"></i> <span class="font-bold text-navy">Favorites</span></h5>
+                        <h5><i class="fa fa-list-ul"></i> <span class="font-bold text-navy">Roles</span></h5>
                         <ul class="folder-list" style="padding: 0">
                             <li><a href=""><i class="fa fa-folder"></i> Files</a></li>
                             <li><a href=""><i class="fa fa-folder"></i> Pictures</a></li>
@@ -47,16 +56,10 @@
                         <div class="ibox">
                             <div class="ibox-content">
                                 <span class="text-muted small float-right">Last modification: <i class="fa fa-clock-o"></i> 2:10 pm - 12.06.2014</span>
-                                <h2>Clients</h2>
+                                <h2>Empleados</h2>
                                 <p>
                                     All clients need to be verified before you can send email and set a project.
                                 </p>
-                                <div class="input-group">
-                                    <input type="text" placeholder="Search client " class="input form-control">
-                                    <span class="input-group-append">
-                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Search</button>
-                                </span>
-                                </div>
                                 <div class="clients-list">
                                     <span class="float-right small text-muted">1406 Elements</span>
                                     <ul class="nav nav-tabs">
