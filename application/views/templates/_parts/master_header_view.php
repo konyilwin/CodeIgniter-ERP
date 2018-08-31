@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>css/plugins/codemirror/codemirror.css">
     <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>css/plugins/codemirror/ambiance.css">
     <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>css/plugins/steps/jquery.steps.css">
     <!-- [JS] - Basic Script -->
     <script src="<?php echo base_url()."assets/"; ?>js/jquery-3.1.1.min.js"></script>
     <script src="<?php echo base_url()."assets/"; ?>js/popper.min.js"></script>

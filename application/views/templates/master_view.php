@@ -31,6 +31,10 @@
 <script src="<?php echo base_url()."assets/";?>js/plugins/chartJs/Chart.min.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.symbol.js"></script>
 <script src="<?php echo base_url()."assets/";?>js/plugins/flot/jquery.flot.time.js"></script>
+<!-- Steps -->
+<script src="<?php echo base_url()."assets/";?>js/plugins/steps/jquery.steps.min.js"></script>
+<!-- Jquery Validate -->
+<script src="<?php echo base_url()."assets/";?>js/plugins/validate/jquery.validate.min.js"></script>
 <!-- Sparkline -->
 <script src="<?php echo base_url()."assets/";?>js/plugins/sparkline/jquery.sparkline.min.js"></script>
 

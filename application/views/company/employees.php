@@ -12,7 +12,7 @@
                                 </span>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <button class="btn btn-primary btn-block">Registrar Empleado</button>
+                        <button class="btn btn-primary btn-block" data-backdrop="static" data-toggle="modal" data-target="#myModal">Registrar Empleado</button>
                         <div class="hr-line-dashed"></div>
                         <h5><i class="fa fa-eye-slash"></i> <span class="font-bold text-navy">Show</span></h5>
                         <a href="#" class="file-control active">All</a>
@@ -1126,19 +1126,186 @@
             </div>
         </div>
     </div>
+    <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated bounceInRight">
+                <div class="modal-header ibox-content ibox-heading">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3><i class="fa fa-users"></i> Nuevo empleado</h3>
+                    <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                </div>
+                <div class="modal-body">
+                    <h2>
+                        Validation Wizard Form
+                    </h2>
+                    <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged.</p>
+                    <form id="form" action="#" class="wizard-big">
+                        <h1>Account</h1>
+                        <fieldset>
+                            <h2>Account Information</h2>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label>Username *</label>
+                                        <input id="userName" name="userName" type="text" class="form-control required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password *</label>
+                                        <input id="password" name="password" type="text" class="form-control required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm Password *</label>
+                                        <input id="confirm" name="confirm" type="text" class="form-control required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="text-center">
+                                        <div style="margin-top: 20px">
+                                            <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <h1>Profile</h1>
+                        <fieldset>
+                            <h2>Profile Information</h2>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>First name *</label>
+                                        <input id="name" name="name" type="text" class="form-control required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last name *</label>
+                                        <input id="surname" name="surname" type="text" class="form-control required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Email *</label>
+                                        <input id="email" name="email" type="text" class="form-control required email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address *</label>
+                                        <input id="address" name="address" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <h1>Warning</h1>
+                        <fieldset>
+                            <div class="text-center" style="margin-top: 120px">
+                                <h2>You did it Man :-)</h2>
+                            </div>
+                        </fieldset>
+
+                        <h1>Finish</h1>
+                        <fieldset>
+                            <h2>Terms and Conditions</h2>
+                            <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script>
 
+
+<script>
     $(document).ready(function(){
 
         $(document.body).on("click",".client-link",function(e){
-            e.preventDefault()
+            e.preventDefault();
             $(".selected .tab-pane").removeClass('active');
             $($(this).attr('href')).addClass("active");
         });
+        $("#wizard").steps();
+        $("#form").steps({
+            bodyTag: "fieldset",
+            onStepChanging: function (event, currentIndex, newIndex)
+            {
+                // Always allow going backward even if the current step contains invalid fields!
+                if (currentIndex > newIndex)
+                {
+                    return true;
+                }
+
+                // Forbid suppressing "Warning" step if the user is to young
+                if (newIndex === 3 && Number($("#age").val()) < 18)
+                {
+                    return false;
+                }
+
+                var form = $(this);
+
+                // Clean up if user went backward before
+                if (currentIndex < newIndex)
+                {
+                    // To remove error styles
+                    $(".body:eq(" + newIndex + ") label.error", form).remove();
+                    $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                }
+
+                // Disable validation on fields that are disabled or hidden.
+                form.validate().settings.ignore = ":disabled,:hidden";
+
+                // Start validation; Prevent going forward if false
+                return form.valid();
+            },
+            onStepChanged: function (event, currentIndex, priorIndex)
+            {
+                // Suppress (skip) "Warning" step if the user is old enough.
+                if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                {
+                    $(this).steps("next");
+                }
+
+                // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                if (currentIndex === 2 && priorIndex === 3)
+                {
+                    $(this).steps("previous");
+                }
+            },
+            onFinishing: function (event, currentIndex)
+            {
+                var form = $(this);
+
+                // Disable validation on fields that are disabled.
+                // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                form.validate().settings.ignore = ":disabled";
+
+                // Start validation; Prevent form submission if false
+                return form.valid();
+            },
+            onFinished: function (event, currentIndex)
+            {
+                var form = $(this);
+
+                // Submit form input
+                form.submit();
+            }
+        }).validate({
+            errorPlacement: function (error, element)
+            {
+                element.before(error);
+            },
+            rules: {
+                confirm: {
+                    equalTo: "#password"
+                }
+            }
+        });
 
     });
-
-
 </script>
